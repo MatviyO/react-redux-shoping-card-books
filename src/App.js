@@ -13,8 +13,7 @@ class App extends React.Component {
 
       return (
           <div className="container">
-              <h2>{books[0].title}</h2>
-              <button onClick={setBooks.bind(this, newBooks)}>click</button>
+
           </div>
       );
   }
