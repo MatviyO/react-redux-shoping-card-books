@@ -6,10 +6,6 @@ class App extends React.Component {
   render() {
       const {books} = this.props.books;
       const {setBooks} = this.props;
-      const newBooks = [{
-          id: 0,
-          title: 'fell book'
-      }];
 
       return (
           <div className="container">

@@ -10,6 +10,12 @@ export default (state = initialState, action) => {
              books: action.payload,
              isLoading: true
          }
+     case 'SET_IS_READY':
+         return {
+             ...state,
+             isLoading: action.payload
+         }
+         break
      case 'ADD_BOOKS':
         return {
             ...state,
