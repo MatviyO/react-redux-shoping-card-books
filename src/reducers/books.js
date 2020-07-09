@@ -1,13 +1,13 @@
 const initialState = {
     isLoading: false,
-    books: null
+    items: null
 }
 export default (state = initialState, action) => {
  switch (action.type) {
      case 'SET_BOOKS':
          return {
              ...state,
-             books: action.payload,
+             items: action.payload,
              isLoading: true
          }
      case 'SET_IS_READY':
@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
      case 'ADD_BOOKS':
         return {
             ...state,
-            books: [...state.books, action.payload]
+            items: [...state.items, action.payload]
         }
      default:
          return state

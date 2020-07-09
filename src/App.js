@@ -3,19 +3,26 @@ import {connect} from 'react-redux';
 import {setBooks} from "./actions/books";
 
 class App extends React.Component {
-  render() {
-      const {books} = this.props.books;
-      const {setBooks} = this.props;
+    componentWillMount() {
+        const {setBooks} = this.props;
+        axios.get('/books.json').then(({data}) => {
+            setBooks(data);
+        })
+    }
 
+    render() {
+      const {books} = this.props;
       return (
-          <div className="container">
-
-          </div>
+          <ul>
+              {books.map(book => (
+                  <li><b>{book.title}</b> - {book.author}</li>
+              ))}
+          </ul>
       );
   }
 }
-const mapStateToProps = state => ({
-    ...state
+const mapStateToProps = ({books}) => ({
+    books: books.items
 });
 const mapDispatchToProps = dispatch => ({
     setBooks: books => dispatch(setBooks(books))
