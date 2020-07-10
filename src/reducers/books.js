@@ -15,12 +15,7 @@ export default (state = initialState, action) => {
              ...state,
              isLoading: action.payload
          }
-         break
-     case 'ADD_BOOKS':
-        return {
-            ...state,
-            items: [...state.items, action.payload]
-        }
+         break;
      default:
          return state
  }
