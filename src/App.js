@@ -20,7 +20,7 @@ class App extends React.Component {
             <Container>
                 <Menu/>
                 <Card.Group itemsPerRow={4}>
-                    {!isLoading ? 'Loading...' : books.map(book => <BookCart {...book} />)}
+                    {!isLoading ? 'Loading...' : books.map((book, index) => <BookCart key={index} {...book} />)}
                 </Card.Group>
             </Container>
         );

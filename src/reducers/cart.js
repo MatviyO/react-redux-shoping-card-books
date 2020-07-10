@@ -14,7 +14,7 @@ export default (state = initialState, action) => {
         case 'REMOVE_BOOK':
             return {
                 ...state,
-                isLoading: action.payload
+                items: state.items.filter(i => i.id != action.payload)
             }
             break;
         default:
