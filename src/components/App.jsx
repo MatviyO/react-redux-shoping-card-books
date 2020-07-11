@@ -1,11 +1,10 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {setBooks} from "./actions/books";
 import axios from 'axios';
-import Menu from "./components/Menu";
+import Menu from "./Menu";
 import {Container, Card} from "semantic-ui-react";
-import BookCart from "./components/BookCard";
-import './app.css';
+import BookCart from "./BookCard";
+import '../app.css';
+import Filter from "../containers/Filter";
 
 class App extends React.Component {
     componentWillMount() {
@@ -19,6 +18,7 @@ class App extends React.Component {
         return (
             <Container>
                 <Menu/>
+                <Filter  />
                 <Card.Group itemsPerRow={4}>
                     {!isLoading ? 'Loading...' : books.map((book, index) => <BookCart key={index} {...book} />)}
                 </Card.Group>
@@ -27,12 +27,4 @@ class App extends React.Component {
     }
 }
 
-const mapStateToProps = ({books}) => ({
-    books: books.items,
-    isLoading: books.isLoading
-});
-const mapDispatchToProps = dispatch => ({
-    setBooks: books => dispatch(setBooks(books))
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

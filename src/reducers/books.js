@@ -1,6 +1,7 @@
 const initialState = {
     isLoading: false,
-    items: null
+    items: null,
+    filterBy: 'all'
 }
 export default (state = initialState, action) => {
  switch (action.type) {
@@ -9,6 +10,11 @@ export default (state = initialState, action) => {
              ...state,
              items: action.payload,
              isLoading: true
+         }
+     case 'SET_FILTER':
+         return {
+             ...state,
+             filterBy: action.payload
          }
      case 'SET_IS_READY':
          return {
