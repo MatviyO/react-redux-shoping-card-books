@@ -9,9 +9,9 @@ const Filter = ({filterBy, setFilter}) => (
             onClick={setFilter.bind(this, 'all')}
         >All</Menu.Item>
         <Menu.Item
-            active={filterBy === 'population'}
-            onClick={setFilter.bind(this, 'population')}
-        >Population</Menu.Item>
+            active={filterBy === 'rating'}
+            onClick={setFilter.bind(this, 'rating')}
+        >Rating</Menu.Item>
         <Menu.Item
             active={filterBy === 'price_hight'}
             onClick={setFilter.bind(this, 'price_hight')}
